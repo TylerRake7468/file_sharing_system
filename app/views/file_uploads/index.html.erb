@@ -1,0 +1,38 @@
+<div>
+<%= link_to "Upload New File", new_file_upload_path, class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" %>
+</div>
+<h1 class="text-3xl font-bold text-gray-800 mb-6">My Uploaded Files</h1>
+
+
+<div class="border border-gray-300 rounded-lg shadow-lg bg-white">
+  <table class="w-full border-collapse">
+    <thead>
+      <tr class="bg-gray-100 border-b">
+        <th class="py-3 px-4 text-left text-gray-700">Title</th>
+        <th class="py-3 px-4 text-left text-gray-700">Description</th>
+        <th class="py-3 px-4 text-left text-gray-700">File</th>
+        <th class="py-3 px-4 text-left text-gray-700">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @files.each do |file| %>
+        <tr class="border-b hover:bg-gray-50">
+          <td class="py-3 px-4"><%= file.title %></td>
+          <td class="py-3 px-4"><%= file.description %></td>
+          <td class="py-3 px-4">
+            <%= link_to "Download", rails_blob_path(file.file, disposition: "attachment"), 
+              class: "bg-green-500 text-white px-3 py-1 rounded hover:bg-green-600 transition" %>
+          </td>
+          <td class="py-3 px-4 space-x-2">
+            <%= link_to "Share", file.public_url, target: "_blank", 
+              class: "bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 transition" %>
+            <%= button_to "Delete", file_upload_path(file), method: :delete, data: { confirm: "Are you sure?" }, 
+              class: "bg-blue-500 text-white px-3 py-1 rounded hover:bg-red-600 transition" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+

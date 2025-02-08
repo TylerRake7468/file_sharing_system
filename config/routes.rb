@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
   get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  # root "posts#index"
-  root to: "home#index"
+  resources :file_uploads, only: [:index, :new, :create, :destroy] do
+    member do
+      get :share
+    end
+  end
+  root "file_uploads#index"
 end

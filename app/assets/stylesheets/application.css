@@ -1,34 +1,37 @@
+/* Navbar styles */
 .navbar {
-    background: #333;
-    color: white;
-    padding: 10px 20px;
+  background-color: #333;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between; /* Pushes left & right content apart */
+  align-items: center;
+  color: white;
+}
 
-  }
-  
-  .navbar-left {
-    font-size: 1.5em;
-    font-weight: bold;
-  }
-  
-  .navbar-right {
-    display: flex;
-    gap: 15px;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .btn {
-    background: #007bff;
-    color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  
-  .btn:hover {
-    background: #0056b3;
-  }
-  
+/* Left side: Website Name */
+.navbar-left .logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+/* Right side: Authentication Links */
+.navbar-right {
+  display: flex;
+  gap: 10px; /* Adds spacing between buttons */
+}
+
+/* Button styling */
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}

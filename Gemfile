@@ -17,6 +17,7 @@ gem 'aws-sdk-s3'
 gem 'image_processing'
 gem 'sidekiq'
 gem 'friendly_id'
+gem 'tinyurl'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

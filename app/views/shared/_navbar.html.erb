@@ -1,18 +1,13 @@
-<nav class="navbar">
-  <div class="container">
-    <!-- Left Side: Website Name -->
-    <div class="navbar-left">
-      <%= link_to "File Sharing App", root_path, class: "logo" %>
-    </div>
-
-    <!-- Right Side: Authentication Links -->
-    <div class="navbar-right">
-      <% if user_signed_in? %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "btn" %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: "btn" %>
-        <%= link_to "Sign Up", new_user_registration_path, class: "btn" %>
-      <% end %>
-    </div>
+<nav class="bg-gray-800 p-4 flex justify-between items-center text-white">
+  <div>
+    <%= link_to "File Sharing App", root_path, class: "text-xl font-bold" %>
+  </div>
+  <div class="flex gap-4">
+    <% if user_signed_in? %>
+      <%= button_to "Logout", destroy_user_session_path, method: :delete, class: "bg-blue-500 px-4 py-2 rounded" %>
+    <% else %>
+      <%= link_to "Login", new_user_session_path, class: "bg-blue-500 px-4 py-2 rounded" %>
+      <%= link_to "Sign Up", new_user_registration_path, class: "bg-green-500 px-4 py-2 rounded" %>
+    <% end %>
   </div>
 </nav>
