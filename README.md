@@ -15,7 +15,7 @@ Ensure you have the following installed:
 
 ### 1️⃣ Clone the Repository
 ```sh
-1. git clone https://github.com/yourusername/file-sharing-system.git
+1. git clone git@github.com:TylerRake7468/file_sharing_system.git
 2. cd file-sharing-system
 
 3. bundle install
