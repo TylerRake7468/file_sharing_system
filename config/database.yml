@@ -1,0 +1,19 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username: lalitmali
+  password: Classic@909
+  host: localhost
+
+development:
+  <<: *default
+  database: file_sharing_system_development
+
+test:
+  <<: *default
+  database: file_sharing_system_test
+
+production:
+  <<: *default
+  database: file_sharing_system_production
