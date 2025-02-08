@@ -1,0 +1,18 @@
+<h1>Share Your File</h1>
+
+<p>Copy and share this link:</p>
+
+<input type="text" value="<%= @short_url %>" id="short-url" readonly>
+<button onclick="copyToClipboard()">Copy</button>
+
+<br><br>
+<%= link_to "Back to My Files", file_uploads_path %>
+
+<script>
+  function copyToClipboard() {
+    var copyText = document.getElementById("short-url");
+    copyText.select();
+    document.execCommand("copy");
+    alert("Copied to clipboard!");
+  }
+</script>

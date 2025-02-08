@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_02_08_052217) do
+ActiveRecord::Schema[7.1].define(version: 2025_02_08_111502) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,7 +48,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_02_08_052217) do
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "short_url"
+    t.index ["short_url"], name: "index_file_uploads_on_short_url", unique: true
     t.index ["user_id"], name: "index_file_uploads_on_user_id"
+  end
+
+  create_table "short_urls", force: :cascade do |t|
+    t.text "original_url"
+    t.string "short_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["short_code"], name: "index_short_urls_on_short_code"
   end
 
   create_table "users", force: :cascade do |t|
