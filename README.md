@@ -1,24 +1,26 @@
-# README
+# File Sharing System (Ruby on Rails)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a full-stack **Ruby on Rails** application that allows users to **upload, manage, and share large files** via short URLs.
 
-Things you may want to cover:
+## 🛠 Prerequisites
 
-* Ruby version
+Ensure you have the following installed:
+- **Ruby** (3.x recommended)
+- **Rails** (7.x recommended)
+- **PostgreSQL** (14+ recommended)
+- **Node.js & Yarn** (for frontend assets)
+- **Redis** (if using Sidekiq for background jobs)
 
-* System dependencies
+## 🚀 Installation Guide
 
-* Configuration
+### 1️⃣ Clone the Repository
+```sh
+1. git clone https://github.com/yourusername/file-sharing-system.git
+2. cd file-sharing-system
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+3. bundle install
+4. yarn install
+5. config/database.yml   => add your postgres user credential id password
+6. rails db:create
+7. rails db:migrate
+8. rails server
